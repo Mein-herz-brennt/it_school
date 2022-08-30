@@ -20,10 +20,10 @@ async def start(message: types.Message):
 async def get_work(message: types.Message, state: FSMContext):
     await state.finish()
     await message.answer("Введіть опис замовлення!")
-    await Frilance.info_abou_deal.set()
+    await Frilance.info_about_deal.set()
 
 
-@dp.message_handler(state=Frilance.info_abou_deal)
+@dp.message_handler(state=Frilance.info_about_deal)
 async def deal_info(message: types.Message, state: FSMContext):
     await state.finish()
     with open("frilance.json", "r", encoding="utf-8") as file:
